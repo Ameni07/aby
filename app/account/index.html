@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <br/><br/>
+    <br/> <br/> 
+<p id="demo"></p>
+
+<script>
+  $.ajax({ url: "https://api.mlab.com/api/1/databases/peoplein/collections/peoplein?apiKey=eHvVf79XL2VF8oJgLRY2LStPG1n94os7"}).done(function(data){    
+    document.getElementById("nbin").innerHTML= JSON.stringify(data[data.length-1].nbin) ;});
+</script>
+
+<script>
+  $.ajax({ url: "https://api.mlab.com/api/1/databases/peopleout/collections/peopleout?apiKey=eHvVf79XL2VF8oJgLRY2LStPG1n94os7" }).done(function (data) {
+    document.getElementById("nbout").innerHTML = JSON.stringify(data[data.length - 1].nbout);
+  });
+</script>
+<script>
+  $.ajax({ url: "https://api.mlab.com/api/1/databases/peopletot/collections/peopletot?apiKey=eHvVf79XL2VF8oJgLRY2LStPG1n94os7" }).done(function (data) {
+    document.getElementById("nbtot").innerHTML = JSON.stringify(data[data.length - 1].nbtot);
+  });
+</script>
+      <!-- Counts Section -->   
+    <div class="row">
+      <div class="col-sm-12">
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 col-md-6 col-lg-3">
+        <div class="well">
+          <div class="row">
+            <div class="col-md-12 col-lg-6">
+
+              <h4>Number of people entering:</h4>
+              <h2 id="nbin"></h2>
+
+            </div>
+            <div class="col-md-12 col-lg-6">
+              <span id="user-chart-container"><img src="https://png.icons8.com/color/1600/walking.png"></span>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-3">
+        <div class="well">
+          <div class="row">
+            <div class="col-md-12 col-lg-6">
+
+              <h4>Number of people going out:</h4>
+              <h2 id="nbout"></h2>
+            </div>
+
+            <div class="col-md-12 col-lg-6">
+              <span id="page-views-chart-container"><img src="https://png.icons8.com/color/1600/exit-sign.png" height="123" width="35"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-3">
+        <div class="well">
+          <div class="row">
+            <div class="col-md-12 col-lg-6">
+
+              <h4>Number of people existing:</h4>
+              <h2 id="nbtot"></h2>
+            </div>
+
+            <div class="col-md-12 col-lg-6">
+              <span id="session-duration-chart-container"><img src="https://image.flaticon.com/sprites/new_packs/219953-people.png" height="123" width="35"></span>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-6 col-lg-3">
+
+
+        <div class="well">
+          <div class="row">
+            <div class="col-md-12 col-lg-6">
+
+              <h4>Occupancy rate:</h4><br/>
+              <h2>51.46%</h2>
+            </div>
+
+            <div class="col-md-12 col-lg-6">
+              <span id="bounce-rate-chart-container"><img src="https://cdn.iconscout.com/public/images/icon/premium/png-512/business-graph-growth-chart-3ab8e89c339343ac-512x512.png" height="123" width="35"></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+ 
+          <!-- Page Header-->
+          <header> 
+            <h1 class="h3 display">Statistics:</h1>
+          </header>
+
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="card line-chart-example">
+                <div class="card-header d-flex align-items-center">
+                  <h4>Line Chart Example</h4>
+                </div>
+                <div class="card-body">
+                  <canvas id="lineChartExample"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card bar-chart-example">
+                <div class="card-header d-flex align-items-center">
+                  <h4>Bar Chart Example</h4>
+                </div>
+                <div class="card-body">
+                  <canvas id="barChartExample"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card pie-chart-example">
+                <div class="card-header d-flex align-items-center">
+                  <h4>Pie Chart Example</h4>
+                </div>
+                <div class="card-body">
+                  <div class="chart-container">
+                    <canvas id="pieChartExample"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card polar-chart-example">
+                <div class="card-header d-flex align-items-center">
+                  <h4>Ploar Chart Example</h4>
+                </div>
+                <div class="card-body">
+                  <div class="chart-container">
+                    <canvas id="polarChartExample"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="card radar-chart-example">
+                <div class="card-header d-flex align-items-center">
+                  <h4>Radar Chart Example</h4>
+                </div>
+                <div class="card-body">
+                  <div class="chart-container">
+                    <canvas id="radarChartExample"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="main-footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6">
+              <p>Your company &copy; 2017-2019</p>
+            </div>
+            <div class="col-sm-6 text-right">
+              <p>Design by <a href="https://bootstrapious.com" class="external">Bootstrapious</a></p>
+              <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions and it helps me to run Bootstrapious. Thank you for understanding :)-->
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- JavaScript files-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/charts-custom.js"></script>
+   
+     
+    <!-- Main File-->
+    <script src="js/front.js"></script>
+  </body>
+</html>
